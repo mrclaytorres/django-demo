@@ -1,0 +1,27 @@
+{% extends layout %}
+
+{% load i18n %}
+
+{% block title %}{% translate "Demo" %}{% endblock %}
+
+{% block content %}
+<h1>Product Database</h1>
+<table class="fs-5">
+  <thead>
+    <tr>
+      <th class="p-2" scope="col">SKU</th>
+      <th class="p-2" scope="col">Name</th>
+      <th class="p-2" scope="col">Brand</th>
+    </tr>
+  </thead>
+  <tbody class="table">
+    {% for item in all %}
+    <tr>
+      <td class="p-2">{{ item.sku }}</td>
+      <td class="p-2">{{ item.name }}</td>
+      <td class="p-2">{{ item.brand }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
